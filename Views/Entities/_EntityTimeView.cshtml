@@ -1,0 +1,46 @@
+﻿@model Nostralogia2._1.Models.Entities.EntityTimeModel
+<div class ="SMEntity_Entity">
+
+    <div class="SMEntity_Entity_lbl" >
+        @Model.EntityLabel
+    </div>
+    <div class="SMEntity_txt_data" id ="@Model.GetIDEntity()">
+        @Model.EntityData
+    </div>
+     <div class="SMEntity_link" id="@Model.GetIDImgEdit()">
+        <img src ="/Images/DataWorks/edit.png"  height="40" width="40"/>
+    </div>
+    <div class="SMEntity_link" id="@Model.GetIDImgCancel()">
+        <img src ="/Images/DataWorks/out.png"  height="40" width="40"/>
+    </div>
+
+<div class="SMEntity_simple_container" id="@Model.GetDivTimeID()">
+     @Html.Partial("~/Views/Calendar/_TimeSelection.cshtml",@Model._tm)
+</div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ('@Model.IsEnabledForEdit' == false) {
+            $('#' + '@Model.GetIDImgEdit()').hide();
+        }
+
+        $('#' + '@Model.GetDivTimeID()').hide();
+        $('#' + '@Model.GetIDImgCancel()').hide();
+
+        $('#' + '@Model.GetIDImgEdit()').on("click", function () {
+            $('#' + '@Model.GetIDEntity()').hide();
+            $('#' + '@Model.GetIDImgEdit()').hide();
+            $('#' + '@Model.GetIDImgCancel()').show();
+            $('#' + '@Model.GetDivTimeID()').show();
+
+        });
+        $('#' + '@Model.GetIDImgCancel()').on("click", function () {
+
+            $('#' + '@Model.GetIDEntity()').show();
+            $('#' + '@Model.GetIDImgEdit()').show();
+            $('#' + '@Model.GetIDImgCancel()').hide();
+            $('#' + '@Model.GetDivTimeID()').hide();
+        });
+    });// document ready
+
+</script>

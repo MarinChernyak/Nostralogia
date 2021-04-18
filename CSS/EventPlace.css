@@ -1,0 +1,46 @@
+﻿.EP_Main {
+    float: left;
+    margin-left:50px;
+}
+.EP_Main_Edit {
+    float: left;
+}
+.EP_BoxContainer {
+    border: thin solid #003366;
+    border-radius: 3px;
+    font-family: 'Lucida Sans' , 'Lucida Sans Regular' , 'Lucida Grande' , 'Lucida Sans Unicode' , Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #001C37;
+    background-color: #E5E5E5;
+    padding: 5px;
+    float: left;
+    width:330px;
+}
+.EP_BoxContainer_Edit {
+    border: thin solid #003366;
+    border-radius: 3px;
+    font-family: 'Lucida Sans' , 'Lucida Sans Regular' , 'Lucida Grande' , 'Lucida Sans Unicode' , Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #282828;
+    background-color: #BCD2E9;
+    padding: 5px;
+    float: left; /*width: 290px;*/
+}
+.EP_hidden {
+    display:none;
+}
+.EP_InnerRow {
+    width:100%;
+    float:left;
+    margin-top:5px;
+    padding:0 5px;
+}
+    .EP_InnerRow select {
+        min-width:320px;
+        border: thin solid #003366;
+        border-radius: 2px;
+        height:25px;
+    }
+.EP_LastRow {
+    margin-bottom:10px;
+}

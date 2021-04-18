@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMGeoDataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMGeoDataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCountryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CountryData" nillable="true" type="tns:CountryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountryData" nillable="true" type="tns:ArrayOfCountryData" />
+  <xs:complexType name="CountryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryAcr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountryData" nillable="true" type="tns:CountryData" />
+  <xs:complexType name="ArrayOfCityData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CityData" nillable="true" type="tns:CityData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCityData" nillable="true" type="tns:ArrayOfCityData" />
+  <xs:complexType name="CityData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryData" nillable="true" type="tns:CountryData" />
+      <xs:element minOccurs="0" name="IDCity" type="xs:int" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="StateRegionData" nillable="true" type="tns:StateRegionData" />
+      <xs:element minOccurs="0" name="TimeDiff" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CityData" nillable="true" type="tns:CityData" />
+  <xs:complexType name="StateRegionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryRef" type="xs:int" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StateRegionAcr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateRegionID" type="xs:int" />
+      <xs:element minOccurs="0" name="StateRegionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateRegionData" nillable="true" type="tns:StateRegionData" />
+  <xs:complexType name="ArrayOfStateRegionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StateRegionData" nillable="true" type="tns:StateRegionData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStateRegionData" nillable="true" type="tns:ArrayOfStateRegionData" />
+  <xs:complexType name="ArrayOfGEOTimeZoneInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GEOTimeZoneInfo" nillable="true" type="tns:GEOTimeZoneInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGEOTimeZoneInfo" nillable="true" type="tns:ArrayOfGEOTimeZoneInfo" />
+  <xs:complexType name="GEOTimeZoneInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Abbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDTimeZone" type="xs:int" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location_World_Wide" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TZone_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeOffset" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GEOTimeZoneInfo" nillable="true" type="tns:GEOTimeZoneInfo" />
+  <xs:complexType name="CityQueryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryIDLogOperator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaceLogOperator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaceSQLOperator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateID" type="xs:int" />
+      <xs:element minOccurs="0" name="StateIDLogOperator" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CityQueryData" nillable="true" type="tns:CityQueryData" />
+  <xs:complexType name="StateQueryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acronym" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AcronymLogOperator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AcronymSQLOperator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CountryIDLogOperator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateLogOperator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateRegionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateSQLOperator" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateQueryData" nillable="true" type="tns:StateQueryData" />
+  <xs:complexType name="ArrayOfStateRegionDataQueryRez">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StateRegionDataQueryRez" nillable="true" type="tns:StateRegionDataQueryRez" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStateRegionDataQueryRez" nillable="true" type="tns:ArrayOfStateRegionDataQueryRez" />
+  <xs:complexType name="StateRegionDataQueryRez">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateRegionData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StateRegionDataQueryRez" nillable="true" type="tns:StateRegionDataQueryRez" />
+</xs:schema>

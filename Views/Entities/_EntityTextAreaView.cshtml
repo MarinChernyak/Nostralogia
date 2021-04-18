@@ -1,0 +1,38 @@
+﻿@model Nostralogia2._1.Models.Entities.EntityTextAreaModel
+<div class ="SMEntity_Entity">
+<div class="SMEntity_Row">
+    <div class="SMEntity_Entity_lbl" >
+        @Model.EntityLabel
+    </div>
+    <div class="SMEntity_link" id="@Model.idimgEdit">
+        <img src ="/Images/Entities/edit.png"  height="40" width="40" data-toggle="tooltip" data-placement="top" title="Edit"/>
+    </div>
+    <div class="SMEntity_link" id="@Model.idimgCancel">
+        <img src ="/Images/Entities/out.png"  height="40" width="40" data-toggle="tooltip" data-placement="top" title="Exit"/>
+    </div>
+</div>
+<div class="SMEntity_Row">
+    <div class="SMEntity_txt_data" id ="@Model.IdEntity">
+        @Model.DisplayData
+    </div>
+    <div class="SMEntity_input" id="@Model.IdDivCtrl">
+        <textarea id="@Model.IdCtrl" cols="@Model.Columns" rows="@Model.Rows"></textarea>
+    </div>
+    <input type="hidden" id="@Model.idHiddenValue" />
+
+</div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var entityObj = new TextEntity('@Model.IsEnabledForEdit', '@Model.EntityIndex', '@Model.IdCtrl');
+
+        $('#' + entityObj.ID_ImgEdit).on("click", function () {
+            entityObj.OnEditClicked();
+        });
+        $('#' + entityObj.ID_ImgCancel).on("click", function () {
+            entityObj.OnCancelClicked();
+        });
+    });// document ready
+
+</script>

@@ -1,0 +1,42 @@
+﻿.RSI_main_container {
+    float: left;
+    width: 200px;
+    margin-left:200px;
+}
+
+.RSI_Row {
+    width: 100%;
+    float: left;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.RSI_Ctrl input {
+    border: 1px solid #666666;
+    border-radius: 4px;
+    float: left;
+    width: 153px;
+    height: 20px;
+}
+
+.RSI_Ctrl img {
+    margin-left: 2px;
+    cursor: pointer;
+    margin-top: 0;
+    border-radius: 3px;
+}
+
+.RSI_Row img {
+    border: 1px solid #666666;
+    float: left;
+}
+.RSI_ErrContainer {
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #CC0000;
+}
+.RSI_hidden {
+    display:none;
+}

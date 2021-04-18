@@ -1,0 +1,40 @@
+﻿@model Nostralogia2._1.Models.Geo.GeoPlaceCollections
+<link href="@Url.Content("~/CSS/EventPlace.css")" rel="stylesheet" type="text/css" />
+
+<div class="EP_Main_Edit">
+    <div class="EP_BoxContainer_Edit">
+        <div class="EP_InnerRow">
+            @Html.Label("Country")
+        </div>
+        <div class="EP_InnerRow">
+            @Html.DropDownListFor(x=>x.Countries.IdSelected,@Model.Countries.LstSelectedData, new {@class = "formControl", id="cmbCountries"},new ViewDataDictionary
+{
+    TemplateInfo = new System.Web.Mvc.TemplateInfo { HtmlFieldPrefix = "Child1" }
+})
+        </div>
+        <div class="EP_InnerRow">
+            @Html.Label("States/Provincies")
+        </div>
+        <div class="EP_InnerRow">
+             @Html.DropDownListFor(s=>s.States.IdSelected,@Model.States.LstSelectedData , new {@class = "formControl", id="cmbStates"})
+        </div>
+        <div class="EP_InnerRow" id="lblCities">
+            @Html.Label("Cities")
+        </div>
+        <div class="EP_InnerRow EP_LastRow">
+             @Html.DropDownListFor(c=>c.Cities.IdSelected,@Model.Cities.LstSelectedData , new {@class = "formControl", id="cmbCities"})
+        </div>
+    </div>
+</div>
+<script src ="/JS/GeoActions.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#cmbCountries").on("change", function () {
+            UpdateCountry();
+        });
+        $("#cmbStates").on("change", function () {
+            UpdateStates();
+        });
+
+    });
+</script>

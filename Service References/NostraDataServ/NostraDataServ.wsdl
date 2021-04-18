@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NostraDataServ" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:6280/NostraDataServ.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:6280/NostraDataServ.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:6280/NostraDataServ.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://localhost:6280/NostraDataServ.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMGeoDataContracts" />
+      <xsd:import schemaLocation="http://localhost:6280/NostraDataServ.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SMDataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INostraDataServ_IsAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAlive" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_IsAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalKeyWords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalKeyWords" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalKeyWords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalKeyWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalEventsByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalEventsByCategory" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalEventsByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalEventsByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalEventsCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalEventsCategories" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalEventsCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalEventsCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalPictures_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalPictures" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalPictures_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalPicturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalEvents" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalEvent" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalData" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetPersonalData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonalDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetLastPersonalDataCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastPersonalDataCollection" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetLastPersonalDataCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastPersonalDataCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetLastHistoricalDataCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastHistoricalDataCollection" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetLastHistoricalDataCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastHistoricalDataCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetBirthTimeSources_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirthTimeSources" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetBirthTimeSources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBirthTimeSourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetDataTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataTypes" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetDataTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetSexData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSexData" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetSexData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSexDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetTimeshifts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeshifts" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetTimeshifts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeshiftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetKeyWords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyWords" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetKeyWords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKeyWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetDrillUpListKeyWords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrillUpListKeyWords" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetDrillUpListKeyWords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrillUpListKeyWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetDrillDownListKeyWords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrillDownListKeyWords" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetDrillDownListKeyWords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDrillDownListKeyWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetWorldEventList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorldEventList" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetWorldEventList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorldEventListResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetRelatives_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatives" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_GetRelatives_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelativesResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_AssociateUserAndPersonaldata_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateUserAndPersonaldata" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_AssociateUserAndPersonaldata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociateUserAndPersonaldataResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_AddPersonalData_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPersonalData" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_AddPersonalData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPersonalDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_AddPicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPicture" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_AddPicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_AddPersonalEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPersonalEvent" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_AddPersonalEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPersonalEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_AddRelative_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRelative" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_AddRelative_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRelativeResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_DeletePersonalEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonalEvent" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_DeletePersonalEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonalEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_DeletePicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePicture" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_DeletePicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_DeletePersonalData_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonalData" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_DeletePersonalData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonalDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_DeleteRelationship_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRelationship" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_DeleteRelationship_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRelationshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_UpdatePersonalData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalData" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_UpdatePersonalData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_UpdatePersonsKeywords_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonsKeywords" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_UpdatePersonsKeywords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonsKeywordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_UpdatePersonalEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalEvent" />
+  </wsdl:message>
+  <wsdl:message name="INostraDataServ_UpdatePersonalEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalEventResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INostraDataServ">
+    <wsdl:operation name="IsAlive">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/IsAlive" message="tns:INostraDataServ_IsAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/IsAliveResponse" message="tns:INostraDataServ_IsAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalKeyWords">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalKeyWords" message="tns:INostraDataServ_GetPersonalKeyWords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalKeyWordsResponse" message="tns:INostraDataServ_GetPersonalKeyWords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalEventsByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalEventsByCategory" message="tns:INostraDataServ_GetPersonalEventsByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalEventsByCategoryResponse" message="tns:INostraDataServ_GetPersonalEventsByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalEventsCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalEventsCategories" message="tns:INostraDataServ_GetPersonalEventsCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalEventsCategoriesResponse" message="tns:INostraDataServ_GetPersonalEventsCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalPictures">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalPictures" message="tns:INostraDataServ_GetPersonalPictures_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalPicturesResponse" message="tns:INostraDataServ_GetPersonalPictures_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalEvents" message="tns:INostraDataServ_GetPersonalEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalEventsResponse" message="tns:INostraDataServ_GetPersonalEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalEvent" message="tns:INostraDataServ_GetPersonalEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalEventResponse" message="tns:INostraDataServ_GetPersonalEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalData">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalData" message="tns:INostraDataServ_GetPersonalData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetPersonalDataResponse" message="tns:INostraDataServ_GetPersonalData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPersonalDataCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetLastPersonalDataCollection" message="tns:INostraDataServ_GetLastPersonalDataCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetLastPersonalDataCollectionResponse" message="tns:INostraDataServ_GetLastPersonalDataCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastHistoricalDataCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetLastHistoricalDataCollection" message="tns:INostraDataServ_GetLastHistoricalDataCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetLastHistoricalDataCollectionResponse" message="tns:INostraDataServ_GetLastHistoricalDataCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBirthTimeSources">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetBirthTimeSources" message="tns:INostraDataServ_GetBirthTimeSources_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetBirthTimeSourcesResponse" message="tns:INostraDataServ_GetBirthTimeSources_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetDataTypes" message="tns:INostraDataServ_GetDataTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetDataTypesResponse" message="tns:INostraDataServ_GetDataTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSexData">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetSexData" message="tns:INostraDataServ_GetSexData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetSexDataResponse" message="tns:INostraDataServ_GetSexData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeshifts">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetTimeshifts" message="tns:INostraDataServ_GetTimeshifts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetTimeshiftsResponse" message="tns:INostraDataServ_GetTimeshifts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyWords">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetKeyWords" message="tns:INostraDataServ_GetKeyWords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetKeyWordsResponse" message="tns:INostraDataServ_GetKeyWords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDrillUpListKeyWords">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetDrillUpListKeyWords" message="tns:INostraDataServ_GetDrillUpListKeyWords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetDrillUpListKeyWordsResponse" message="tns:INostraDataServ_GetDrillUpListKeyWords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDrillDownListKeyWords">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetDrillDownListKeyWords" message="tns:INostraDataServ_GetDrillDownListKeyWords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetDrillDownListKeyWordsResponse" message="tns:INostraDataServ_GetDrillDownListKeyWords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorldEventList">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetWorldEventList" message="tns:INostraDataServ_GetWorldEventList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetWorldEventListResponse" message="tns:INostraDataServ_GetWorldEventList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatives">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/GetRelatives" message="tns:INostraDataServ_GetRelatives_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/GetRelativesResponse" message="tns:INostraDataServ_GetRelatives_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociateUserAndPersonaldata">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/AssociateUserAndPersonaldata" message="tns:INostraDataServ_AssociateUserAndPersonaldata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/AssociateUserAndPersonaldataResponse" message="tns:INostraDataServ_AssociateUserAndPersonaldata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPersonalData">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/AddPersonalData" message="tns:INostraDataServ_AddPersonalData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/AddPersonalDataResponse" message="tns:INostraDataServ_AddPersonalData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/AddPicture" message="tns:INostraDataServ_AddPicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/AddPictureResponse" message="tns:INostraDataServ_AddPicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPersonalEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/AddPersonalEvent" message="tns:INostraDataServ_AddPersonalEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/AddPersonalEventResponse" message="tns:INostraDataServ_AddPersonalEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRelative">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/AddRelative" message="tns:INostraDataServ_AddRelative_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/AddRelativeResponse" message="tns:INostraDataServ_AddRelative_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/DeletePersonalEvent" message="tns:INostraDataServ_DeletePersonalEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/DeletePersonalEventResponse" message="tns:INostraDataServ_DeletePersonalEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/DeletePicture" message="tns:INostraDataServ_DeletePicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/DeletePictureResponse" message="tns:INostraDataServ_DeletePicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalData">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/DeletePersonalData" message="tns:INostraDataServ_DeletePersonalData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/DeletePersonalDataResponse" message="tns:INostraDataServ_DeletePersonalData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRelationship">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/DeleteRelationship" message="tns:INostraDataServ_DeleteRelationship_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/DeleteRelationshipResponse" message="tns:INostraDataServ_DeleteRelationship_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalData">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/UpdatePersonalData" message="tns:INostraDataServ_UpdatePersonalData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/UpdatePersonalDataResponse" message="tns:INostraDataServ_UpdatePersonalData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonsKeywords">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/UpdatePersonsKeywords" message="tns:INostraDataServ_UpdatePersonsKeywords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/UpdatePersonsKeywordsResponse" message="tns:INostraDataServ_UpdatePersonsKeywords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/INostraDataServ/UpdatePersonalEvent" message="tns:INostraDataServ_UpdatePersonalEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INostraDataServ/UpdatePersonalEventResponse" message="tns:INostraDataServ_UpdatePersonalEvent_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_INostraDataServ" type="tns:INostraDataServ">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsAlive">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/IsAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalKeyWords">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetPersonalKeyWords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalEventsByCategory">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetPersonalEventsByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalEventsCategories">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetPersonalEventsCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalPictures">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetPersonalPictures" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalEvents">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetPersonalEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalEvent">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetPersonalEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonalData">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetPersonalData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPersonalDataCollection">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetLastPersonalDataCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastHistoricalDataCollection">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetLastHistoricalDataCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBirthTimeSources">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetBirthTimeSources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataTypes">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetDataTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSexData">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetSexData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeshifts">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetTimeshifts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKeyWords">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetKeyWords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrillUpListKeyWords">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetDrillUpListKeyWords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrillDownListKeyWords">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetDrillDownListKeyWords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorldEventList">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetWorldEventList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatives">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/GetRelatives" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociateUserAndPersonaldata">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/AssociateUserAndPersonaldata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPersonalData">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/AddPersonalData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPicture">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/AddPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPersonalEvent">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/AddPersonalEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRelative">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/AddRelative" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalEvent">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/DeletePersonalEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePicture">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/DeletePicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalData">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/DeletePersonalData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRelationship">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/DeleteRelationship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalData">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/UpdatePersonalData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonsKeywords">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/UpdatePersonsKeywords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalEvent">
+      <soap:operation soapAction="http://tempuri.org/INostraDataServ/UpdatePersonalEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NostraDataServ">
+    <wsdl:port name="BasicHttpBinding_INostraDataServ" binding="tns:BasicHttpBinding_INostraDataServ">
+      <soap:address location="http://localhost:6280/NostraDataServ.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,43 @@
+﻿@model Nostralogia2._1.Models.Entities.EntityComboBoxModel
+<link href="@Url.Content("~/CSS/Entities.css")" rel="stylesheet" type="text/css" />
+
+<div class ="SMEntity_Entity">
+<div class="SMEntity_Row">
+    <div class="SMEntity_Entity_lbl" >
+        @Model.EntityLabel
+    </div>
+    <div class="SMEntity_txt_data" id ="@Model.IdEntity">
+        @Model.EntityData
+    </div>
+    <div class="SMEntity_link" id="@Model.idimgCancel">
+        <img src ="/Images/Entities/out.png"  height="40" width="40" data-toggle="tooltip" data-placement="top" title="Exit"/>
+    </div>
+    <div class="SMEntity_input" id="@Model.IdDivCtrl">
+        @Html.DropDownList("cmbData", @Model.LstData, new { @id=@Model.IdCtrl})
+    </div>
+    <div class="SMEntity_link" id="@Model.idimgEdit">
+        <img src ="/Images/Entities/edit.png"  height="40" width="40" data-toggle="tooltip" data-placement="top" title="Edit"/>
+    </div>
+
+
+</div>
+</div>
+<script type="text/javascript" src="~/JS/EntitiesLib.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var entityObj = new ComboBoxEntity('@Model.IsEnabledForEdit', '@Model.EntityIndex', '@Model.IdCtrl');
+
+        $('#' + entityObj.ID_ImgEdit).on("click", function () {
+            entityObj.OnEditClicked();
+        });
+        $('#' + entityObj.ID_ImgCancel).on("click", function () {
+
+            entityObj.OnCancelClicked();
+        });
+        $("#" + entityObj.ID_Control).change(function () {
+            entityObj.getChange();
+        });
+    });// document ready
+
+</script>

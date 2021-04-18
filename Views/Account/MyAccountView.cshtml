@@ -1,0 +1,74 @@
+﻿@model Nostralogia2._1.Models.Authentification.RegistrationModel
+@using Nostralogia2._1.Common;
+
+@{
+    ViewBag.Title = "My Account";
+    Layout = "~/Views/Shared/_SMRegMaster.cshtml";
+}
+
+@using (Html.BeginForm("SaveUserData", "Registration", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="content_top" ></div>  
+     
+
+    <div class="Nostra_Main" >
+        <div class="Nostra_Row">
+            <h2>Edit Personal Data </h2>
+        </div>
+        <div class="Nostra_Container_70perc" id="dvMain">
+
+            <div class="Nostra_Row Nostra_glolbal_shift">
+            @{      
+                Html.RenderPartial("~/Views/Entities/_EntityTextView.cshtml", new Nostralogia2._1.Models.Entities.EntityTextModel("User Name", Model.ModelUserData.UserData.UserName.Trim(), true));
+
+                Html.RenderPartial("~/Views/Entities/_EntityPasswordView.cshtml", new Nostralogia2._1.Models.Entities.EntityPasswordModel("Password", Model.ModelUserData.UserData.auxParam1.Trim(), true));
+
+                Html.RenderPartial("~/Views/Entities/_EntityTextView.cshtml", new Nostralogia2._1.Models.Entities.EntityTextModel("First Name", Model.ModelUserData.UserData.FName.Trim(), true));
+
+                Html.RenderPartial("~/Views/Entities/_EntityTextView.cshtml", new Nostralogia2._1.Models.Entities.EntityTextModel("Last Name", Model.ModelUserData.UserData.LName.Trim(), true));
+
+                Html.RenderPartial("~/Views/Entities/_EntityTextView.cshtml", new Nostralogia2._1.Models.Entities.EntityTextModel("Email", Model.ModelUserData.UserData.Email, true));
+
+                Html.RenderPartial("~/Views/Entities/_EntityComboBoxView.cshtml", new Nostralogia2._1.Models.Entities.EntityComboBoxModel(Nostralogia2._1.Common.ADUtilities.getLanguages(), "Prefered Language", Nostralogia2._1.Common.ADUtilities.getLanguageDesc(Model.ModelUserData.UserData.LanguageID), true));
+
+                Html.RenderPartial("~/Views/Entities/_EntityGeoPlaceView.cshtml", new Nostralogia2._1.Models.Entities.EntityGeoPlaceModel("Where you are? (optional)", Model.ModelUserData.UserData.cityData.CountryData.CountryID));
+
+            }
+            </div>
+@*            <div class="Nostra_Row Nostra_glolbal_shift">
+            <p>
+                @Html.ActionLink("Change Password", "Index", "ChangePassword")
+            </p>
+            </div>*@
+            <div class="Nostra_Row" id="dvMessagePan">
+
+            </div>            
+            <div class="Nostra_ButtonsRow">           
+                <a  id ="butSave" data-toggle="tooltip" data-placement="top" title="Save chaged data">                    
+                    <img src="/Images/DataWorks/Save.png" width="55" height="55" style="margin-left:50px;"/>
+                </a>
+                <a  id ="butDelete" data-continue="" data-toggle="tooltip" data-placement="top" title="Delete data">                    
+                    <img src="/Images/DataWorks/delete.png" width="55" height="55"/>
+                </a>    
+                @if (Model.ModelUserData.Level == Constants.LevelAdmin)
+                {
+                    <a  id ="butDeleteFromDB" data-continue="" data-toggle="tooltip" data-placement="top" title="Delete data from DB completely">                    
+                        <img src="~/Images/DataWorks/delete_completely.png" width="55" height="55"/>
+                    </a> 
+                }
+            </div>
+        </div>
+  
+         <div class="content_bot" ></div>
+    </div>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#butSave").on("click", function () {
+                $("form").submit();
+            });
+        });
+    </script>
+}

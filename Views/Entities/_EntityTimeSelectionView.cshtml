@@ -1,0 +1,38 @@
+﻿@model Nostralogia2._1.Models.Entities.EntityTimeModel
+<div class ="SMEntity_Entity">
+
+    <div class="SMEntity_Entity_lbl" >
+        @Model.EntityLabel
+    </div>
+    <div class="SMEntity_txt_data" id ="@Model.GetIDEntity()">
+        @Model.EntityData
+    </div>
+     <div class="SMEntity_link" id="@Model.GetIDImgEdit()">
+        <img src ="/Images/Entities/edit.png"  height="40" width="40" data-toggle="tooltip" data-placement="top" title="Edit"/>
+    </div>
+    <div class="SMEntity_link" id="@Model.GetIDImgCancel()">
+        <img src ="/Images/Entities/out.png"  height="40" width="40" data-toggle="tooltip" data-placement="top" title="Exit"/>
+    </div>
+
+    <div class="SMEntity_simple_container" id="@Model.GetDivTimeID()">
+        @Html.Partial("~/Views/Calendar/_TimeSelection.cshtml",@Model.Time)
+    </div>
+</div>
+
+<script type="text/javascript" src="~/JS/EntitiesLib.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        
+        var entityObj = new TimeSelectionEntity('@Model.IsEnabledForEdit', '@Model.GetEntityName()', '@Model.Time.ID');
+
+        $('#' + '@Model.GetIDImgEdit()').on("click", function () {
+            entityObj.OnEditClicked();
+        });
+        $('#' + '@Model.GetIDImgCancel()').on("click", function () {
+            entityObj.OnCancelClicked();
+        });
+
+
+    }) //ready
+    </script>

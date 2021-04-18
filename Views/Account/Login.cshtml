@@ -1,0 +1,81 @@
+﻿@model Nostralogia2._1.Models.Authentification.LogInModel
+@{
+    Layout = "~/Views/Shared/_SMRegMaster.cshtml";
+}
+<section id="loginForm">
+
+@using (Html.BeginForm("LogIn","LogIn", new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+   <div class="content_top" ></div>
+    <div class="Nostra_Main">
+    <fieldset>
+        <legend>Log in Form</legend>
+
+         <div class="Nostra_Row">
+            <div class="editor-label">
+                @Html.Label("User Name")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserData.UserName)
+               
+            </div>
+             <div class="Nostra_Error">
+                 @Model.errUserName
+             </div>
+        </div>
+        <div class="Nostra_Row margin_rows20">
+            <div class="editor-label">
+                @Html.Label("Password")
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.UserData.auxParam1)               
+            </div>
+            <div class="Nostra_Error">
+                 @Model.errPassword
+             </div>
+        </div>
+
+        <div class="Nostra_Row">
+            <div class="editor-ch">
+            @Html.CheckBoxFor(m => m.RememberMe)
+            </div>
+           <div class="editor-label_ch_box">
+                @Html.Label("Remember me")
+            </div>
+        </div>
+        <div class="Nostra_Row">
+             <div class="Nostra_Left_first Nostra_Error">
+                 @Model.errMsg
+             </div>
+        </div>
+        <div class="Nostra_Row">
+
+                <input type="submit" value="Log in" class="Nostra_Button margin_left_first"  />
+     
+        </div>
+    </fieldset>
+     <div class="Nostra_Row">
+        <div class="editor-label">
+            @Html.ActionLink("Register", "Register") if you don't have an account.
+        </div>
+    </div>
+
+    </div>
+    <div class="content_bot" ></div>
+}
+</section>
+
+@*<section class="social" id="socialLoginForm">
+    <h2>Use another service to log in.</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>*@
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+
+    });
+</script>

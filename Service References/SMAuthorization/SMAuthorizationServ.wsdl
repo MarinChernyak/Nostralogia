@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SMAuthorizationServ" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5280/SMAuthorizationServ.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5280/SMAuthorizationServ.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5280/SMAuthorizationServ.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMDataContracts" />
+      <xsd:import schemaLocation="http://localhost:5280/SMAuthorizationServ.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMGeoDataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISMAuthorizationServ_getAdmintWorkPermissionWithTempPass_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAdmintWorkPermissionWithTempPass" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getAdmintWorkPermissionWithTempPass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAdmintWorkPermissionWithTempPassResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_DeleteUserSafe_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserSafe" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_DeleteUserSafe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserSafeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_CreateNewUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewUser" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_CreateNewUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_CreateNewUserSecure_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewUserSecure" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_CreateNewUserSecure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewUserSecureResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getUserDataByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserDataByName" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getUserDataByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserDataByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getUserDataByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserDataByEmail" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getUserDataByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserDataByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getUserDataByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserDataByID" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getUserDataByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserDataByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getUserRoleData_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserRoleData" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getUserRoleData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserRoleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getAppRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAppRoles" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_getAppRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAppRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_CheckPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPassword" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_CheckPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_UpdateUsersRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsersRole" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_UpdateUsersRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsersRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_UpdateUserData_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserData" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_UpdateUserData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_LogIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogIn" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_LogIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogInResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_LogInSecure_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogInSecure" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_LogInSecure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogInSecureResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_CheckUniqueness_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUniqueness" />
+  </wsdl:message>
+  <wsdl:message name="ISMAuthorizationServ_CheckUniqueness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUniquenessResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISMAuthorizationServ">
+    <wsdl:operation name="getAdmintWorkPermissionWithTempPass">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getAdmintWorkPermissionWithTempPass" message="tns:ISMAuthorizationServ_getAdmintWorkPermissionWithTempPass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getAdmintWorkPermissionWithTempPassResponse" message="tns:ISMAuthorizationServ_getAdmintWorkPermissionWithTempPass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/DeleteUser" message="tns:ISMAuthorizationServ_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/DeleteUserResponse" message="tns:ISMAuthorizationServ_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserSafe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/DeleteUserSafe" message="tns:ISMAuthorizationServ_DeleteUserSafe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/DeleteUserSafeResponse" message="tns:ISMAuthorizationServ_DeleteUserSafe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/CreateNewUser" message="tns:ISMAuthorizationServ_CreateNewUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/CreateNewUserResponse" message="tns:ISMAuthorizationServ_CreateNewUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewUserSecure">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/CreateNewUserSecure" message="tns:ISMAuthorizationServ_CreateNewUserSecure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/CreateNewUserSecureResponse" message="tns:ISMAuthorizationServ_CreateNewUserSecure_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserDataByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getUserDataByName" message="tns:ISMAuthorizationServ_getUserDataByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getUserDataByNameResponse" message="tns:ISMAuthorizationServ_getUserDataByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserDataByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getUserDataByEmail" message="tns:ISMAuthorizationServ_getUserDataByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getUserDataByEmailResponse" message="tns:ISMAuthorizationServ_getUserDataByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserDataByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getUserDataByID" message="tns:ISMAuthorizationServ_getUserDataByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getUserDataByIDResponse" message="tns:ISMAuthorizationServ_getUserDataByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserRoleData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getUserRoleData" message="tns:ISMAuthorizationServ_getUserRoleData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getUserRoleDataResponse" message="tns:ISMAuthorizationServ_getUserRoleData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAppRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getAppRoles" message="tns:ISMAuthorizationServ_getAppRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/getAppRolesResponse" message="tns:ISMAuthorizationServ_getAppRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/CheckPassword" message="tns:ISMAuthorizationServ_CheckPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/CheckPasswordResponse" message="tns:ISMAuthorizationServ_CheckPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/ResetPassword" message="tns:ISMAuthorizationServ_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/ResetPasswordResponse" message="tns:ISMAuthorizationServ_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsersRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/UpdateUsersRole" message="tns:ISMAuthorizationServ_UpdateUsersRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/UpdateUsersRoleResponse" message="tns:ISMAuthorizationServ_UpdateUsersRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/UpdateUserData" message="tns:ISMAuthorizationServ_UpdateUserData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/UpdateUserDataResponse" message="tns:ISMAuthorizationServ_UpdateUserData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/LogIn" message="tns:ISMAuthorizationServ_LogIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/LogInResponse" message="tns:ISMAuthorizationServ_LogIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogInSecure">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/LogInSecure" message="tns:ISMAuthorizationServ_LogInSecure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/LogInSecureResponse" message="tns:ISMAuthorizationServ_LogInSecure_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUniqueness">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMAuthorizationServ/CheckUniqueness" message="tns:ISMAuthorizationServ_CheckUniqueness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMAuthorizationServ/CheckUniquenessResponse" message="tns:ISMAuthorizationServ_CheckUniqueness_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISMAuthorizationServ" type="tns:ISMAuthorizationServ">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAdmintWorkPermissionWithTempPass">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/getAdmintWorkPermissionWithTempPass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserSafe">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/DeleteUserSafe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewUser">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/CreateNewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewUserSecure">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/CreateNewUserSecure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserDataByName">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/getUserDataByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserDataByEmail">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/getUserDataByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserDataByID">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/getUserDataByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserRoleData">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/getUserRoleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAppRoles">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/getAppRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassword">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/CheckPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsersRole">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/UpdateUsersRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserData">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/UpdateUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogIn">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/LogIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogInSecure">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/LogInSecure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUniqueness">
+      <soap:operation soapAction="http://tempuri.org/ISMAuthorizationServ/CheckUniqueness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SMAuthorizationServ">
+    <wsdl:port name="BasicHttpBinding_ISMAuthorizationServ" binding="tns:BasicHttpBinding_ISMAuthorizationServ">
+      <soap:address location="http://localhost:5280/SMAuthorizationServ.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

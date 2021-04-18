@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Nostralogia</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link href="~/CSS/styles.css" rel="stylesheet" type="text/css" />
+<link href="~/CSS/Nostra_global.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="~/CSS/nivo-slider.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+<link rel="stylesheet" href="~/Fonts/fontawesome-free-5.9.0-web/css/all.css"/>
+</head>
+<body>
+    <div class="Nostra_main_container">
+        <div class="Nostra_Row">
+            <div class="Nostra_Alpha">		
+                <img src="~/Images/Nostra_Logo.png" alt="logo" />
+            </div>
+            <div class="AT_Login">
+                @if(Session[CommonData.Constants.SessionUserData]==null)
+                {
+                    @Html.ActionLink("LogIn ", "LogIn", "LogIn")
+                    <div id="dvReg">
+                    @Html.ActionLink("/ Register", "ShowUser", "Registration")
+                    </div>
+                }
+                else
+                {
+                    @Html.ActionLink("Log Out /", "LogOut", "LogIn")
+
+                    @Html.ActionLink("MyAccount", "ShowUser", "Registration")
+       
+                }
+            </div>
+        </div>
+        <div class="Nostra_RowMenu">
+            <div class="Nostra_RowMenu_cell">
+                <i class="fa fa-home" style="color:white;font-size:30px;"> <a href="~/Home/Index"></a></i>
+            </div>
+            <div class="Nostra_RowMenu_cell">
+                <a href="about_us.html" class="but" title="">About Us</a>
+            </div>
+            <div class="Nostra_RowMenu_cell">
+                <a href="our_services.html"  class="but" title="">Our Services</a>
+            </div>
+            <div class="Nostra_RowMenu_cell">
+                <a href="our_products.html"  class="but" title="">Our&nbsp;Products</a>
+            </div>
+            <div class="Nostra_RowMenu_cell">
+                <a href="contact_us.html" class="but" title="">Contact&nbsp;us</a>
+            </div>
+            
+
+@*                if(Session[Nostralogia2._1.Common.Constants.SessionUserData]==null)*@
+                <div class="Nostra_RowMenu_cell">
+                    @Html.ActionLink("Data Works",  "Index","DataWorksGen")
+                </div>
+        
+              <div class="lang_box">
+                    <div class="lang_lbl">
+                        Language:
+                    </div>
+                    <div class="lang_box_combo">
+                         @Html.DropDownList("cmbLanguage", Nostralogia2._1.Common.ADUtilities.getLanguages())
+                    </div>          
+               </div>
+
+
+        </div>
+        <div class="Nostra_Row">
+        @RenderBody()
+    </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+        $("#cmbLanguage").change(function () {
+            var selLanguage = $("#cmbLanguage option:selected").val();
+            window.location.href = "Home/LanguageChanged?lang=" + selLanguage;
+        });
+
+    })
+</script>

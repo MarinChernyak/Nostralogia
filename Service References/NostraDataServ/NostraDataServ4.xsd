@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SMDataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SMDataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfErrorContainer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ErrorContainer" nillable="true" type="tns:ErrorContainer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfErrorContainer" nillable="true" type="tns:ArrayOfErrorContainer" />
+  <xs:complexType name="ErrorContainer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppID" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrorCode" type="tns:ErrorCode" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FunctionName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorContainer" nillable="true" type="tns:ErrorContainer" />
+  <xs:simpleType name="ErrorCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SMA_NOERRORS" />
+      <xs:enumeration value="SMA_USERNAME_WRONG" />
+      <xs:enumeration value="SMA_PASS_WRONG" />
+      <xs:enumeration value="SMA_PROFILE_INACTIVE" />
+      <xs:enumeration value="SMA_FILE_NOT_EXIST" />
+      <xs:enumeration value="SMA_FILE_READONLY" />
+      <xs:enumeration value="SMA_DATA_NOT_INSERTED_UPDATED" />
+      <xs:enumeration value="SWE_NO_RIGHTS" />
+      <xs:enumeration value="SMA_CONNECTION_ERR" />
+      <xs:enumeration value="SMA_UROLEDATA_WRONG_EMPTY" />
+      <xs:enumeration value="SMA_UNDEFINED" />
+      <xs:enumeration value="SMA_ERROR_COMMUNICATION_WITH_PARAM_KEEPER" />
+      <xs:enumeration value="SMA_EXCEPTION" />
+      <xs:enumeration value="SMA_WRONG_INPUT_DATA" />
+      <xs:enumeration value="SMA_LANG_VERSION_DOES_NOT_EXISTS" />
+      <xs:enumeration value="SMA_WRONG_OUTPUT_DATA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ErrorCode" nillable="true" type="tns:ErrorCode" />
+</xs:schema>

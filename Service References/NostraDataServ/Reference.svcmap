@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e6cca576-c469-46a0-8b17-af83055bf972" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6280/NostraDataServ.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NostraDataServ.xsd" MetadataType="Schema" ID="4d354a86-74e2-4c1d-bf61-c8cf2f7e7a45" SourceId="1" SourceUrl="http://localhost:6280/NostraDataServ.svc?xsd=xsd1" />
+    <MetadataFile FileName="NostraDataServ1.xsd" MetadataType="Schema" ID="f091ca97-89cb-47bf-a094-26734f726007" SourceId="1" SourceUrl="http://localhost:6280/NostraDataServ.svc?xsd=xsd0" />
+    <MetadataFile FileName="NostraDataServ.wsdl" MetadataType="Wsdl" ID="412f18f1-112c-4702-ad2c-5d958fc1c622" SourceId="1" SourceUrl="http://localhost:6280/NostraDataServ.svc?wsdl" />
+    <MetadataFile FileName="NostraDataServ2.xsd" MetadataType="Schema" ID="f9a66af8-72a6-4f33-881e-320b1011f986" SourceId="1" SourceUrl="http://localhost:6280/NostraDataServ.svc?xsd=xsd2" />
+    <MetadataFile FileName="NostraDataServ3.xsd" MetadataType="Schema" ID="a3e9512c-c004-4668-b132-135adaaa52fc" SourceId="1" SourceUrl="http://localhost:6280/NostraDataServ.svc?xsd=xsd3" />
+    <MetadataFile FileName="NostraDataServ4.xsd" MetadataType="Schema" ID="4e1e71f3-a27e-45c6-8a56-a05684393e5d" SourceId="1" SourceUrl="http://localhost:6280/NostraDataServ.svc?xsd=xsd4" />
+    <MetadataFile FileName="NostraDataServ.disco" MetadataType="Disco" ID="2e2d8086-33d3-47c4-92c7-2bb36e8c6eb8" SourceId="1" SourceUrl="http://localhost:6280/NostraDataServ.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

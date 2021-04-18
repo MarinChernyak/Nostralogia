@@ -1,0 +1,71 @@
+﻿@model Nostralogia2._1.Models.Entities.EntityGeoPlaceModel
+
+<div class ="SMEntity_Entity">
+    <div class="SMEntity_Row">
+        <div class="SMEntity_Entity_lbl" >
+            @Model.EntityLabel
+        </div>
+        <div class="SMEntity_txt_data" id ="@Model.IdEntity">@Model.EntityData.Trim()</div>
+        <div class="SMEntity_link" id="@Model.idimgCancel">
+            <img src ="/Images/Entities/out.png"  height="40" width="40" data-toggle="tooltip" data-placement="top" title="Exit"/>
+        </div>
+        <div class="SMEntity_link" id="@Model.idimgEdit">
+            <img src ="/Images/Entities/edit.png"  height="40" width="40" data-toggle="tooltip" data-placement="top" title="Edit"/>
+        </div>
+        <div class="SMEntity_Row" id="@Model.IdDivCtrl">
+            <div class="SMEntity_simple_container" id="@Model.IdCtrl">
+                 @Html.Partial("~/Views/Controls/EventPlace/EventPlaceMain.cshtml",@Model.GeoModel,new ViewDataDictionary
+                    {
+                        TemplateInfo = new System.Web.Mvc.TemplateInfo { HtmlFieldPrefix = "GeoModel" }
+                    })
+            </div>
+        </div>
+
+
+        <input type="hidden" id="@Model.idHiddenValue" value="@Model.EntityData.Trim()"/>
+    </div>
+</div>
+
+<script src="/JS/EntitiesLib.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+        var entityObj = new GeoEntity('@Model.IsEnabledForEdit', '@Model.EntityIndex', '@Model.IdCtrl');
+
+        $('#' + '@Model.idimgEdit').on("click", function () {
+            entityObj.OnEditClicked();
+        });
+        $('#' + '@Model.idimgCancel').on("click", function () {
+            entityObj.OnCancelClicked();
+        });
+    });
+
+        //function PlaceToString() {
+
+        //    var selCountry = $("#cmbCountries option:selected").text();
+        //    if ($("#cmbCountries option:selected").val() == "-1" || $("#cmbCountries option:selected").val() == "")
+        //        selCountry = "";
+
+
+        //    var selStates = $("#cmbStates option:selected").text();
+        //    if ($("#cmbStates option:selected").val() == "-1" || $("#cmbStates option:selected").val() == "" || $("#cmbStates option:selected").val() == "0")
+        //        selStates = "";
+
+        //    var placename = $("#cmbCities option:selected").text();
+        //    if ($("#cmbCities option:selected").val() == "-1" || $("#cmbCities option:selected").val() == "")
+        //        placename = "";
+        //    var strOut = placename + ', ' + selCountry ;
+
+        //    if (selStates != "")
+        //        strOut = strOut + ' (' + selStates + ')';
+
+        //    if (selCountry == "" && selStates == "" && placename == "")
+        //        strOut = "Unknown";
+        //    return strOut;
+
+        //}
+    //});// document ready
+
+</script>

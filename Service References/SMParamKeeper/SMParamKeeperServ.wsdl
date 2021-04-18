@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SMParamKeeperServ" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:7780/SMParamKeeperServ.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:7780/SMParamKeeperServ.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:7780/SMParamKeeperServ.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://127.0.0.1:7780/SMParamKeeperServ.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISMParamKeeperServ_GetParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParam" />
+  </wsdl:message>
+  <wsdl:message name="ISMParamKeeperServ_GetParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMParamKeeperServ_SetParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetParam" />
+  </wsdl:message>
+  <wsdl:message name="ISMParamKeeperServ_SetParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMParamKeeperServ_DeleteParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteParam" />
+  </wsdl:message>
+  <wsdl:message name="ISMParamKeeperServ_DeleteParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMParamKeeperServ_SetSessionKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSessionKey" />
+  </wsdl:message>
+  <wsdl:message name="ISMParamKeeperServ_SetSessionKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSessionKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISMParamKeeperServ_GetSessionKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionKey" />
+  </wsdl:message>
+  <wsdl:message name="ISMParamKeeperServ_GetSessionKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSessionKeyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISMParamKeeperServ">
+    <wsdl:operation name="GetParam">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMParamKeeperServ/GetParam" message="tns:ISMParamKeeperServ_GetParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMParamKeeperServ/GetParamResponse" message="tns:ISMParamKeeperServ_GetParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetParam">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMParamKeeperServ/SetParam" message="tns:ISMParamKeeperServ_SetParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMParamKeeperServ/SetParamResponse" message="tns:ISMParamKeeperServ_SetParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteParam">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMParamKeeperServ/DeleteParam" message="tns:ISMParamKeeperServ_DeleteParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMParamKeeperServ/DeleteParamResponse" message="tns:ISMParamKeeperServ_DeleteParam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSessionKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMParamKeeperServ/SetSessionKey" message="tns:ISMParamKeeperServ_SetSessionKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMParamKeeperServ/SetSessionKeyResponse" message="tns:ISMParamKeeperServ_SetSessionKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISMParamKeeperServ/GetSessionKey" message="tns:ISMParamKeeperServ_GetSessionKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISMParamKeeperServ/GetSessionKeyResponse" message="tns:ISMParamKeeperServ_GetSessionKey_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISMParamKeeperServ" type="tns:ISMParamKeeperServ">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetParam">
+      <soap:operation soapAction="http://tempuri.org/ISMParamKeeperServ/GetParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetParam">
+      <soap:operation soapAction="http://tempuri.org/ISMParamKeeperServ/SetParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteParam">
+      <soap:operation soapAction="http://tempuri.org/ISMParamKeeperServ/DeleteParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSessionKey">
+      <soap:operation soapAction="http://tempuri.org/ISMParamKeeperServ/SetSessionKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSessionKey">
+      <soap:operation soapAction="http://tempuri.org/ISMParamKeeperServ/GetSessionKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SMParamKeeperServ">
+    <wsdl:port name="BasicHttpBinding_ISMParamKeeperServ" binding="tns:BasicHttpBinding_ISMParamKeeperServ">
+      <soap:address location="http://127.0.0.1:7780/SMParamKeeperServ.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

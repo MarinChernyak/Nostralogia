@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6280/NostraDataServ.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://localhost:6280/NostraDataServ.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SMDataContracts" />
+  <xs:element name="IsAlive">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAliveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsAliveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalKeyWords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDPerson" type="xs:int" />
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalKeyWordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPersonalKeyWordsResult" nillable="true" type="q1:ArrayOfKeyWord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalEventsByCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDCategory" type="xs:int" />
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalEventsByCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPersonalEventsByCategoryResult" nillable="true" type="q2:ArrayOfListItemLocalized" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalEventsCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalEventsCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPersonalEventsCategoriesResult" nillable="true" type="q3:ArrayOfListItemLocalized" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalPictures">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idRef" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalPicturesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPersonalPicturesResult" nillable="true" type="q4:ArrayOfPicturesData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idRef" type="xs:int" />
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPersonalEventsResult" nillable="true" type="q5:ArrayOfEventData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDEvent" type="xs:int" />
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalEventResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPersonalEventResult" nillable="true" type="q6:EventData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonalDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetPersonalDataResult" nillable="true" type="q7:PersonalRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastPersonalDataCollection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iNumberLastRecords" type="xs:int" />
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastPersonalDataCollectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetLastPersonalDataCollectionResult" nillable="true" type="q8:ArrayOfDisplayPersonalRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastHistoricalDataCollection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iNumberLastRecords" type="xs:int" />
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastHistoricalDataCollectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetLastHistoricalDataCollectionResult" nillable="true" type="q9:ArrayOfHistoricalEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirthTimeSources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBirthTimeSourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetBirthTimeSourcesResult" nillable="true" type="q10:ArrayOfBirthTimeSource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDataTypesResult" nillable="true" type="q11:ArrayOfDataType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSexData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSexDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetSexDataResult" nillable="true" type="q12:ArrayOfSexData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTimeshifts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTimeshiftsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetTimeshiftsResult" nillable="true" type="q13:ArrayOfTimeShiftData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKeyWords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idRef" type="xs:int" />
+        <xs:element minOccurs="0" name="AccessLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+        <xs:element minOccurs="0" name="schema" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKeyWordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetKeyWordsResult" nillable="true" type="q14:ArrayOfKeyWord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDrillUpListKeyWords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idKW" type="xs:int" />
+        <xs:element minOccurs="0" name="AccessLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+        <xs:element minOccurs="0" name="schema" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDrillUpListKeyWordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDrillUpListKeyWordsResult" nillable="true" type="q15:ArrayOfKeyWord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDrillDownListKeyWords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idKW" type="xs:int" />
+        <xs:element minOccurs="0" name="AccessLevel" type="xs:int" />
+        <xs:element minOccurs="0" name="iLang" type="xs:int" />
+        <xs:element minOccurs="0" name="schema" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDrillDownListKeyWordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDrillDownListKeyWordsResult" nillable="true" type="q16:ArrayOfKeyWord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorldEventList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorldEventListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetWorldEventListResult" nillable="true" type="q17:PersonalRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelatives">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDPerson" type="xs:int" />
+        <xs:element minOccurs="0" name="IDLang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelativesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetRelativesResult" nillable="true" type="q18:ArrayOfRelative" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociateUserAndPersonaldata">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userid" type="xs:int" />
+        <xs:element minOccurs="0" name="personalid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociateUserAndPersonaldataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SMDataContracts" minOccurs="0" name="AssociateUserAndPersonaldataResult" nillable="true" type="q19:ArrayOfErrorContainer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPersonalData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="pr" nillable="true" type="q20:PersonalRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPersonalDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddPersonalDataResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPicture">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sFileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IDRef" type="xs:int" />
+        <xs:element minOccurs="0" name="iSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPictureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddPictureResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPersonalEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ed" nillable="true" type="q21:EventData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPersonalEventResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddPersonalEventResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRelative">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDPerson" type="xs:int" />
+        <xs:element minOccurs="0" name="IDRelative" type="xs:int" />
+        <xs:element minOccurs="0" name="IDRelationship" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRelativeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddRelativeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePersonalEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDEvent" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePersonalEventResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePersonalEventResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePicture">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idImg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePictureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePictureResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePersonalData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDPerson" type="xs:int" />
+        <xs:element minOccurs="0" name="EliminatePhysically" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePersonalDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SMDataContracts" minOccurs="0" name="DeletePersonalDataResult" nillable="true" type="q22:ArrayOfErrorContainer" />
+        <xs:element minOccurs="0" name="PictureFiles" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRelationship">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDPerson" type="xs:int" />
+        <xs:element minOccurs="0" name="IDRelative" type="xs:int" />
+        <xs:element minOccurs="0" name="IDRelationship" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRelationshipResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRelationshipResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePersonalData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="pr" nillable="true" type="q23:PersonalRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePersonalDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SMDataContracts" minOccurs="0" name="UpdatePersonalDataResult" nillable="true" type="q24:ArrayOfErrorContainer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePersonsKeywords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDPerson" type="xs:int" />
+        <xs:element minOccurs="0" name="lstKW" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePersonsKeywordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SMDataContracts" minOccurs="0" name="UpdatePersonsKeywordsResult" nillable="true" type="q25:ArrayOfErrorContainer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePersonalEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ed" nillable="true" type="q26:EventData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePersonalEventResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePersonalEventResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

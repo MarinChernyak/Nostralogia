@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6280/NostraDataServ.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMGeoDataContracts" />
+  <xs:complexType name="ArrayOfKeyWord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyWord" nillable="true" type="tns:KeyWord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyWord" nillable="true" type="tns:ArrayOfKeyWord" />
+  <xs:complexType name="KeyWord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IDKW" type="xs:int" />
+      <xs:element minOccurs="0" name="KeyWordDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenceID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyWord" nillable="true" type="tns:KeyWord" />
+  <xs:complexType name="ArrayOfListItemLocalized">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListItemLocalized" nillable="true" type="tns:ListItemLocalized" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListItemLocalized" nillable="true" type="tns:ArrayOfListItemLocalized" />
+  <xs:complexType name="ListItemLocalized">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LocalizationBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListItemLocalized" nillable="true" type="tns:ListItemLocalized" />
+  <xs:complexType name="LocalizationBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocalizationBase" nillable="true" type="tns:LocalizationBase" />
+  <xs:complexType name="ArrayOfPicturesData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PicturesData" nillable="true" type="tns:PicturesData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPicturesData" nillable="true" type="tns:ArrayOfPicturesData" />
+  <xs:complexType name="PicturesData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryData" type="xs:int" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSize" type="xs:int" />
+      <xs:element minOccurs="0" name="Height" type="xs:int" />
+      <xs:element minOccurs="0" name="IDPicture" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_Reference" type="xs:int" />
+      <xs:element minOccurs="0" name="Width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PicturesData" nillable="true" type="tns:PicturesData" />
+  <xs:complexType name="ArrayOfEventData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventData" nillable="true" type="tns:EventData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEventData" nillable="true" type="tns:ArrayOfEventData" />
+  <xs:complexType name="EventData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcessLevel" type="xs:int" />
+      <xs:element minOccurs="0" name="Authenticity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="DayFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="DayTo" type="xs:int" />
+      <xs:element minOccurs="0" name="EventDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDEvent" type="xs:int" />
+      <xs:element minOccurs="0" name="IDEventKind" type="xs:int" />
+      <xs:element minOccurs="0" name="IDPerson" type="xs:int" />
+      <xs:element minOccurs="0" name="IDSource" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_contributor" type="xs:int" />
+      <xs:element minOccurs="0" name="MonthFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="MonthTo" type="xs:int" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaceEvent" type="xs:int" />
+      <xs:element minOccurs="0" name="PlaceEventName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="YearFrom" type="xs:int" />
+      <xs:element minOccurs="0" name="YearTo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventData" nillable="true" type="tns:EventData" />
+  <xs:complexType name="WorldEventData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EventData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ScaleID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorldEventData" nillable="true" type="tns:WorldEventData" />
+  <xs:complexType name="PersonalRecord">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PersonalRecordBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataType_Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataType_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Events" nillable="true" type="tns:ArrayOfEventData" />
+          <xs:element minOccurs="0" name="IsAvailable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="KeyWords" nillable="true" type="tns:ArrayOfKeyWord" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:ArrayOfPersonalNote" />
+          <xs:element minOccurs="0" name="Pictures" nillable="true" type="tns:ArrayOfPicturesData" />
+          <xs:element minOccurs="0" name="Relatives" nillable="true" type="tns:ArrayOfRelative" />
+          <xs:element minOccurs="0" name="Sex_Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceBirthTime" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonalRecord" nillable="true" type="tns:PersonalRecord" />
+  <xs:complexType name="PersonalRecordBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Additional_hours" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SMGeoDataContracts" minOccurs="0" name="BirthPlace" nillable="true" type="q1:CityData" />
+      <xs:element minOccurs="0" name="Birth_Day" type="xs:int" />
+      <xs:element minOccurs="0" name="Birth_Hour_From" type="xs:int" />
+      <xs:element minOccurs="0" name="Birth_Hour_To" type="xs:int" />
+      <xs:element minOccurs="0" name="Birth_Min_From" type="xs:int" />
+      <xs:element minOccurs="0" name="Birth_Min_To" type="xs:int" />
+      <xs:element minOccurs="0" name="Birth_Month" type="xs:int" />
+      <xs:element minOccurs="0" name="Birth_Sec_From" type="xs:int" />
+      <xs:element minOccurs="0" name="Birth_Sec_To" type="xs:int" />
+      <xs:element minOccurs="0" name="Birth_Year" type="xs:int" />
+      <xs:element minOccurs="0" name="DataType" type="xs:int" />
+      <xs:element minOccurs="0" name="First_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_contributor" type="xs:int" />
+      <xs:element minOccurs="0" name="Second_Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalRecordBase" nillable="true" type="tns:PersonalRecordBase" />
+  <xs:complexType name="Relative">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PersonalRecordBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description_Relationship" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IDRelationship" type="xs:int" />
+          <xs:element minOccurs="0" name="ID_Relative" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Relative" nillable="true" type="tns:Relative" />
+  <xs:complexType name="DisplayPersonalRecord">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PersonalRecordBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DataType_Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataType_Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsAvailable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NumEvents" type="xs:int" />
+          <xs:element minOccurs="0" name="NumKW" type="xs:int" />
+          <xs:element minOccurs="0" name="NumPictures" type="xs:int" />
+          <xs:element minOccurs="0" name="Sex_Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceBirthTime" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DisplayPersonalRecord" nillable="true" type="tns:DisplayPersonalRecord" />
+  <xs:complexType name="ArrayOfPersonalNote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonalNote" nillable="true" type="tns:PersonalNote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonalNote" nillable="true" type="tns:ArrayOfPersonalNote" />
+  <xs:complexType name="PersonalNote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateCreation" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID_Contributor" type="xs:int" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalNote" nillable="true" type="tns:PersonalNote" />
+  <xs:complexType name="ArrayOfRelative">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Relative" nillable="true" type="tns:Relative" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRelative" nillable="true" type="tns:ArrayOfRelative" />
+  <xs:complexType name="ArrayOfDisplayPersonalRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DisplayPersonalRecord" nillable="true" type="tns:DisplayPersonalRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDisplayPersonalRecord" nillable="true" type="tns:ArrayOfDisplayPersonalRecord" />
+  <xs:complexType name="ArrayOfHistoricalEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoricalEvent" nillable="true" type="tns:HistoricalEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoricalEvent" nillable="true" type="tns:ArrayOfHistoricalEvent" />
+  <xs:complexType name="HistoricalEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment_source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContributorsCountryID" type="xs:int" />
+      <xs:element minOccurs="0" name="Damage" type="xs:double" />
+      <xs:element minOccurs="0" name="DataTypeDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventKeywords" nillable="true" type="tns:ArrayOfKeyWord" />
+      <xs:element minOccurs="0" name="EventName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventPlaceData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventScaleValue" type="xs:int" />
+      <xs:element minOccurs="0" name="Events_Day_from" type="xs:int" />
+      <xs:element minOccurs="0" name="Events_Day_to" type="xs:int" />
+      <xs:element minOccurs="0" name="Events_H_from" type="xs:int" />
+      <xs:element minOccurs="0" name="Events_H_to" type="xs:int" />
+      <xs:element minOccurs="0" name="Events_M_from" type="xs:int" />
+      <xs:element minOccurs="0" name="Events_M_to" type="xs:int" />
+      <xs:element minOccurs="0" name="Events_Month_from" type="xs:int" />
+      <xs:element minOccurs="0" name="Events_Month_to" type="xs:int" />
+      <xs:element minOccurs="0" name="Events_Year_from" type="xs:int" />
+      <xs:element minOccurs="0" name="Events_Year_to" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HistScaleValue" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IDHistScale" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_ScaleEvent" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_contributor" type="xs:int" />
+      <xs:element minOccurs="0" name="Impact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImpactDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Impact_related_sectors" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PagePlaceDataID" type="xs:int" />
+      <xs:element minOccurs="0" name="Potential_severity" type="xs:int" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceID" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceRating" type="xs:int" />
+      <xs:element minOccurs="0" name="Survivers_number" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Wictims_number" type="xs:int" />
+      <xs:element minOccurs="0" name="comment_event" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoricalEvent" nillable="true" type="tns:HistoricalEvent" />
+  <xs:complexType name="ArrayOfBirthTimeSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BirthTimeSource" nillable="true" type="tns:BirthTimeSource" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBirthTimeSource" nillable="true" type="tns:ArrayOfBirthTimeSource" />
+  <xs:complexType name="BirthTimeSource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IDSource" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceDescription_Comments" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BirthTimeSource" nillable="true" type="tns:BirthTimeSource" />
+  <xs:complexType name="ArrayOfDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataType" nillable="true" type="tns:DataType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataType" nillable="true" type="tns:ArrayOfDataType" />
+  <xs:complexType name="DataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IDType" type="xs:int" />
+      <xs:element minOccurs="0" name="TypeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeDescription_Full" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataType" nillable="true" type="tns:DataType" />
+  <xs:complexType name="ArrayOfSexData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SexData" nillable="true" type="tns:SexData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSexData" nillable="true" type="tns:ArrayOfSexData" />
+  <xs:complexType name="SexData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SexDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SexID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SexData" nillable="true" type="tns:SexData" />
+  <xs:complexType name="ArrayOfTimeShiftData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TimeShiftData" nillable="true" type="tns:TimeShiftData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTimeShiftData" nillable="true" type="tns:ArrayOfTimeShiftData" />
+  <xs:complexType name="TimeShiftData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IDTimeshift" type="xs:int" />
+      <xs:element minOccurs="0" name="Shift_Value" type="xs:double" />
+      <xs:element minOccurs="0" name="TimeshiftDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TimeShiftData" nillable="true" type="tns:TimeShiftData" />
+</xs:schema>

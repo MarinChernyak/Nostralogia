@@ -1,0 +1,117 @@
+﻿@model Nostralogia2._1.Models.Authentification.RegistrationModel
+@{
+    Layout = "~/Views/Shared/_SMRegMaster.cshtml";
+}
+<section id="loginForm">
+
+@using (Html.BeginForm("Create", "Registration", new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+   <div class="content_top" ></div>
+    <div class="Nostra_Main">
+    <fieldset>
+        <legend>Create New Account</legend>
+
+        <div class="Nostra_Row">
+            <div class="editor-label">
+                @Html.Label("User Name")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserData.UserName)
+               
+            </div>
+             <div class="Nostra_Error">
+                 @Model.errUserName
+             </div>
+        </div>
+        <div class="Nostra_Row">
+            <div class="editor-label">
+                @Html.Label("Password")
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.UserData.auxParam1)               
+            </div>
+            <div class="Nostra_Error">
+                 @Model.errPassword
+             </div>
+        </div>
+        <div class="Nostra_Row">
+            <div class="editor-label">
+                @Html.Label("Confirm password")
+            </div>
+            <div class="editor-field">
+                @Html.Password("pass2")               
+            </div>
+            <div class="Nostra_Error">
+                 @Model.errPassword
+             </div>
+        </div>
+        <div class="Nostra_Row">
+            <div class="editor-label">
+                @Html.Label("Email")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserData.Email)               
+            </div>
+            <div class="Nostra_Error">
+                 @Model.errEmail
+             </div>
+        </div>                  
+        <div class="Nostra_Row">
+            <div class="editor-label">
+                @Html.Label("First Name (optional)")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserData.FName)               
+            </div>
+            <div class="Nostra_Error">
+                 @Model.errFName
+             </div>
+        </div>  
+        <div class="Nostra_Row">
+            <div class="editor-label">
+                @Html.Label("Last Name (optional)")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UserData.LName)               
+            </div>
+            <div class="Nostra_Error">
+                 @Model.errLName
+             </div>
+        </div>  
+        @*<div class="Nostra_Row">
+            <div class="editor-label">
+                @Html.Label("Preffered Language")
+            </div>
+            <div class="Nostra_ComboBox">
+                @Html.DropDownListFor(x=>x.Lang, Model.Laguages)               
+            </div>
+            <div class="Nostra_Error">
+                 @Model.errLName
+             </div>
+        </div> *@
+
+        <div class="Nostra_Row">
+             <div class="Nostra_Left_first Nostra_Error">
+                 @Model.errMsg
+             </div>
+        </div>
+
+
+        <div class="Nostra_Row">
+
+                <input type="submit" value="Register" class="Nostra_Button margin_left_first"  />
+     
+        </div>
+    </fieldset>
+     <div class="Nostra_Row">
+        <div class="editor-label">
+            @Html.ActionLink("Get home page", "Index","Home") 
+        </div>
+    </div>
+
+    </div>
+    <div class="content_bot" ></div>
+}
+</section>

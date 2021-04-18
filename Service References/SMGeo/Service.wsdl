@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5580/SMGeoServ.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5580/SMGeoServ.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5580/SMGeoServ.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SMGeoDataContracts" />
+      <xsd:import schemaLocation="http://localhost:5580/SMGeoServ.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetCountriesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesList" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCountriesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCitiesCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCitiesCollection" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCitiesCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCitiesCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCountriesCollection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesCollection" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCountriesCollection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetEventGeoMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventGeoMap" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetEventGeoMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventGeoMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCityList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCityList" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCityList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCityData_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCityData" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCityData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCityDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getStatesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getStatesList" />
+  </wsdl:message>
+  <wsdl:message name="IService_getStatesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getStatesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCity" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCountry" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveStateRegion_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStateRegion" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveStateRegion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStateRegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTimeZonesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeZonesList" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTimeZonesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeZonesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SearchCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCities" />
+  </wsdl:message>
+  <wsdl:message name="IService_SearchCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SearchStates_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchStates" />
+  </wsdl:message>
+  <wsdl:message name="IService_SearchStates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCity" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteState_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteState" />
+  </wsdl:message>
+  <wsdl:message name="IService_DeleteState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetStateData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStateData" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetStateData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStateDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SearchEmptyStates_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchEmptyStates" />
+  </wsdl:message>
+  <wsdl:message name="IService_SearchEmptyStates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchEmptyStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCountryByState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryByState" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCountryByState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryByStateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetCountriesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCountriesList" message="tns:IService_GetCountriesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCountriesListResponse" message="tns:IService_GetCountriesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCitiesCollection" message="tns:IService_GetCitiesCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCitiesCollectionResponse" message="tns:IService_GetCitiesCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesCollection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCountriesCollection" message="tns:IService_GetCountriesCollection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCountriesCollectionResponse" message="tns:IService_GetCountriesCollection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventGeoMap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetEventGeoMap" message="tns:IService_GetEventGeoMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetEventGeoMapResponse" message="tns:IService_GetEventGeoMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCityList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCityList" message="tns:IService_getCityList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCityListResponse" message="tns:IService_getCityList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCityData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCityData" message="tns:IService_getCityData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCityDataResponse" message="tns:IService_getCityData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStatesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getStatesList" message="tns:IService_getStatesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getStatesListResponse" message="tns:IService_getStatesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveCity" message="tns:IService_SaveCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveCityResponse" message="tns:IService_SaveCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveCountry" message="tns:IService_SaveCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveCountryResponse" message="tns:IService_SaveCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStateRegion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveStateRegion" message="tns:IService_SaveStateRegion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveStateRegionResponse" message="tns:IService_SaveStateRegion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZonesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTimeZonesList" message="tns:IService_GetTimeZonesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTimeZonesListResponse" message="tns:IService_GetTimeZonesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SearchCities" message="tns:IService_SearchCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SearchCitiesResponse" message="tns:IService_SearchCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchStates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SearchStates" message="tns:IService_SearchStates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SearchStatesResponse" message="tns:IService_SearchStates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteCity" message="tns:IService_DeleteCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteCityResponse" message="tns:IService_DeleteCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/DeleteState" message="tns:IService_DeleteState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/DeleteStateResponse" message="tns:IService_DeleteState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStateData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetStateData" message="tns:IService_GetStateData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetStateDataResponse" message="tns:IService_GetStateData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchEmptyStates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SearchEmptyStates" message="tns:IService_SearchEmptyStates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SearchEmptyStatesResponse" message="tns:IService_SearchEmptyStates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryByState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCountryByState" message="tns:IService_GetCountryByState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCountryByStateResponse" message="tns:IService_GetCountryByState_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCountriesList">
+      <soap:operation soapAction="http://tempuri.org/IService/GetCountriesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCitiesCollection">
+      <soap:operation soapAction="http://tempuri.org/IService/GetCitiesCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesCollection">
+      <soap:operation soapAction="http://tempuri.org/IService/GetCountriesCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventGeoMap">
+      <soap:operation soapAction="http://tempuri.org/IService/GetEventGeoMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCityList">
+      <soap:operation soapAction="http://tempuri.org/IService/getCityList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCityData">
+      <soap:operation soapAction="http://tempuri.org/IService/getCityData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatesList">
+      <soap:operation soapAction="http://tempuri.org/IService/getStatesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCity">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCountry">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStateRegion">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveStateRegion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZonesList">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTimeZonesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCities">
+      <soap:operation soapAction="http://tempuri.org/IService/SearchCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchStates">
+      <soap:operation soapAction="http://tempuri.org/IService/SearchStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCity">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteState">
+      <soap:operation soapAction="http://tempuri.org/IService/DeleteState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStateData">
+      <soap:operation soapAction="http://tempuri.org/IService/GetStateData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchEmptyStates">
+      <soap:operation soapAction="http://tempuri.org/IService/SearchEmptyStates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryByState">
+      <soap:operation soapAction="http://tempuri.org/IService/GetCountryByState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:5580/SMGeoServ.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

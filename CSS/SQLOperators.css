@@ -1,0 +1,10 @@
+﻿.SQL_MainContainer {
+    float:left;
+    width:93px;
+}
+    .SQL_MainContainer img {
+        float:left;
+        margin-left:1px;
+        width:30px;
+        height:30px;
+    }
